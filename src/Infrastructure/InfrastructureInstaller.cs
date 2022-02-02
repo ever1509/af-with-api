@@ -19,10 +19,6 @@ public static class InfrastructureInstaller
 
         services.AddScoped<IContext>(provider => provider.GetRequiredService<Context>());
 
-        services.AddScoped<Context>(
-            sp => sp.GetRequiredService<IDbContextFactory<Context>>()
-                .CreateDbContext());
-
         return services;
     }
 }
